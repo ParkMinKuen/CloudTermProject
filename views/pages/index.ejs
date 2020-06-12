@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Xompatible" content="ie=edge">
+    <title>편의점 물품 관리</title>
+    <style>
+        table {
+            width: 450px;
+            border-top: 1px solid #444444;
+            border-collapse: collapse;
+            font-weight: bolder;
+        }
+        th, td {
+            border-bottom: 1px solid #444444;
+            padding: 10px;
+            text-align: center;
+        }
+        thead tr {
+            background-color: #0d47a1;
+            color: #ffffff;
+        }
+        tbody tr:nth-child(2n) {
+            background-color: #bbdefb;
+        }
+        tbody tr:nth-child(2n+1) {
+            background-color: #e3f2fd;
+        }
+    </style>
+</head>
+
+<body>
+  <div class="container">
+      <h3><a href="/item/create">Create Item</a></h3>
+      <h1>Item List</h1>
+      <% if(items.length > 0) { %>
+          <table border="1">
+              <thead>
+                  <tr>
+                      <th>물품</th>
+                      <th>재고</th>
+                  </tr>
+              </thead>
+
+              <tbody>
+              <% for(var i = 0; i < items.length;i++) { %>
+
+                  <tr>
+
+                      <td>
+                          <a href="/item/show/<%=items[i]._id%>">
+                              <%= items[i].name %>
+                          </a>
+                      </td>
+
+                      <td>  <%= items[i].quantity %>개</td>
+
+                  </tr>
+
+              <% } %>
+              </tbody>
+          </table>
+
+      <% } else { %>
+          <div> NO item.</div>
+      <% } %>
+  </div>
+
+</body>
+
+
+</html>

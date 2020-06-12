@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Xompatible" content="ie=edge">
+    <title> Create Item</title>
+    <style>
+        table {
+            width: 450px;
+            border-top: 1px solid #444444;
+            border-collapse: collapse;
+            font-weight: bolder;
+        }
+        th, td {
+            border-bottom: 1px solid #444444;
+            padding: 10px;
+            text-align: center;
+        }
+        thead tr {
+            background-color: #0d47a1;
+            color: #ffffff;
+        }
+        tbody tr:nth-child(2n) {
+            background-color: #bbdefb;
+        }
+        tbody tr:nth-child(2n+1) {
+            background-color: #e3f2fd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3><a href="/item">Item list</a></h3>
+        <h1>상품 추가하기</h1>
+        <form action="/item/save" method="post">
+
+            <table border="1">
+                <tbody>
+
+                    <tr>
+                        <td width="70" bgcolor="#0d47a1" style="color: white">상품명</td>
+
+                        <td><input type="text" name="name"></td>
+
+                    </tr>
+
+                    <tr>
+                        <td width="70" bgcolor="#4169e1" style="color: white">설명</td>
+
+                        <td><textarea name="expression"></textarea></td>
+                    </tr>
+
+                    <tr>
+                        <td width="70" bgcolor="#0d47a1" style="color: white">수량</td>
+
+                        <td><input type="number" name="quantity"></td>
+
+                    </tr>
+
+                    <tr>
+                        <td width="70" bgcolor="#4169e1" style="color: white">가격</td>
+
+                        <td><input type="number" name="price"></td>
+
+                    </tr>
+
+                    <tr>
+                        <td><input type="submit" value="save"></td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Xompatible" content="ie=edge">
+    <title>show list</title>
+    <style>
+        table {
+            width: 450px;
+            border-top: 1px solid #444444;
+            border-collapse: collapse;
+            font-weight: bolder;
+        }
+        th, td {
+            border-bottom: 1px solid #444444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        thead tr {
+            background-color: #0d47a1;
+            color: #ffffff;
+        }
+        tbody tr:nth-child(2n) {
+            background-color: #bbdefb;
+        }
+        tbody tr:nth-child(2n+1) {
+            background-color: #e3f2fd;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3><a href="/item">Item list</a></h3>
+        <h1>Item detail</h1>
+
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td width="70" bgcolor="#0d47a1" style="color: white">상품명</td>
+
+                    <td><%= item1.name %></td>
+
+                </tr>
+
+                <tr>
+                    <td width="70" bgcolor="#4169e1" style="color: white">설명</td>
+
+
+                    <td><%= item1.expression %></td>
+
+                </tr>
+
+                <tr>
+                    <td width="70" bgcolor="#0d47a1" style="color: white">재고</td>
+
+                    <td><%= item1.quantity %>개</td>
+
+                </tr>
+
+
+
+                <tr>
+                    <td width="70" bgcolor="#4169e1" style="color: white">가격</td>
+
+                    <td><%= item1.price %>원</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        <h3><a href="/item/edit/<%= item1._id%>">수정하기</a></h3>
+        <form action="/item/delete/<%= item1._id %>"method="post">
+            <button type="submit">삭제</button>
+        </form>
+
+    </div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Xompatible" content="ie=edge">
+    <title>Edit Item</title>
+    <style>
+        table {
+            width: 450px;
+            border-top: 1px solid #444444;
+            border-collapse: collapse;
+            font-weight: bolder;
+        }
+        th, td {
+            border-bottom: 1px solid #444444;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #0d47a1;
+            color: #ffffff;
+        }
+        thead tr {
+            background-color: #0d47a1;
+            color: #ffffff;
+        }
+        tbody tr:nth-child(2n) {
+            background-color: #bbdefb;
+        }
+        tbody tr:nth-child(2n+1) {
+            background-color: #e3f2fd;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h3><a href="/item">ITEM List</a></h3>
+        <h1>Edit Item</h1>
+
+        <form action = "/item/update/<%= item2._id %>" method="post">
+            <table border="1">
+                <tbody>
+
+                    <tr>
+
+                        <td width="70" bgcolor="#0d47a1" style="color: white">상품명</td>
+
+                        <td>
+
+                            <input type="text" name="name" value="<%= item2.name%>"/>
+
+                        </td>
+
+                    </tr>
+
+                <tr>
+
+                    <td width="70" bgcolor="#4169e1" style="color: white">설명</td>
+
+                    <td>
+                        <textarea name="expression">
+                            <%= item2.expression%>
+                        </textarea>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td width="70" bgcolor="#0d47a1" style="color: white">재고</td>
+
+                    <td>
+                    <input type="text" name="quantity" value="<%=item2.quantity%>">
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td width="70" bgcolor="#4169e1" style="color: white">가격</td>
+
+                    <td>
+                        <input type="text" name="price" value="<%=item2.price%>">
+
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td><button type="submit">Update</button> </td>
+                </tr>
+
+                </tbody>
+
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+
+
